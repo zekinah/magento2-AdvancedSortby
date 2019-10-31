@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Zekinah Lecaros
+ * @copyright Copyright (c) 2019 Zekinaj Lecaros (https://github.com/zekinah)
+ * @package Zone_AdvancedSortBy
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Model\Config">
+        <plugin name="Zone_AdvancedSortBy::addCustomOptions" type="Zone\AdvancedSortBy\Plugin\Model\Config" />
+    </type>
+    <type name="Magento\Catalog\Block\Product\ProductList\Toolbar">
+        <plugin name="Zone_AdvancedSortBy::addPriceDecendingFilterInToolbar" type="Zone\AdvancedSortBy\Plugin\Product\ProductList\Toolbar" />
+    </type>
+</config>
