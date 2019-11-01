@@ -43,6 +43,7 @@ class Config
         // Remove specific default sorting options
         $default_options = [];
         $default_options['name'] = $options['name'];
+        $default_options['price'] = $options['price'];
         unset($options['position']);
 
         $customOption['name_asc'] = $default_options['name'];
