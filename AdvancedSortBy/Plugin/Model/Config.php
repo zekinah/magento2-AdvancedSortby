@@ -7,6 +7,7 @@
 namespace Zone\AdvancedSortBy\Plugin\Model;
 
 use Magento\Store\Model\StoreManagerInterface;
+use Zone\AdvancedSortBy\Helper\Data;
 
 /**
  * Class Config
@@ -26,9 +27,11 @@ class Config
      *
      */
     public function __construct(
-        StoreManagerInterface $storeManager
+        StoreManagerInterface $storeManager,
+        Data $dataHelper
     ) {
         $this->_storeManager = $storeManager;
+        $this->_dataHelper = $dataHelper;
     }
 
     /**
@@ -40,27 +43,31 @@ class Config
      */
     public function afterGetAttributeUsedForSortByArray(\Magento\Catalog\Model\Config $catalogConfig, $options)
     {
-        // Remove specific default sorting options
-        $default_options = [];
-        $default_options['name'] = $options['name'];
-        unset($options['position']);
+        if($this->_dataHelper->getGeneralConfig('enable')){
+            // Remove specific default sorting options
+            $default_options = [];
+            $default_options['name'] = $options['name'];
+            $default_options['price'] = $options['price'];
+            unset($options['position']);
 
-        $customOption['name_asc'] = $default_options['name'];
-        $customOption['name_desc'] = $default_options['name'];
-        $customOption['price_asc'] = $default_options['price'];
-        $customOption['price_desc'] = $default_options['price'];
+            $customOption['name_asc'] = $default_options['name'];
+            $customOption['name_desc'] = $default_options['name'];
+            $customOption['price_asc'] = $default_options['price'];
+            $customOption['price_desc'] = $default_options['price'];
 
-        // Update the Label
-        $customOption['featured'] = __('Featured');
-        $customOption['best_selling'] = __('Best Selling');
-        $customOption['price_asc'] = __('Price, low to high');
-        $customOption['price_desc'] = __('Price, high to low');
-        $customOption['name_asc'] = __('Alphabetically, A-Z');
-        $customOption['name_desc'] = __('Alphabetically, Z-A');
-        $customOption['created_asc'] = __('Date, old to new');
-        $customOption['created_dec'] = __('Date, new to old');
+            // Update the Label
+            $customOption['featured'] = __('Featured');
+            $customOption['best_selling'] = __('Best Selling');
+            $customOption['price_asc'] = __('Price, low to high');
+            $customOption['price_desc'] = __('Price, high to low');
+            $customOption['name_asc'] = __('Alphabetically, A-Z');
+            $customOption['name_desc'] = __('Alphabetically, Z-A');
+            $customOption['created_asc'] = __('Date, old to new');
+            $customOption['created_dec'] = __('Date, new to old');
 
-        $options = array_merge($customOption);
+            $options = array_merge($customOption);
+        }
+       
 
         return $options;
     }
