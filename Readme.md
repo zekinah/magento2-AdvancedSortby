@@ -17,17 +17,17 @@ Sort By Options:
 
 Enable module:
 ```
-php -f bin/magento module:enable Zone_AdvancedSortBy
+php bin/magento module:enable Zone_AdvancedSortBy
 ```
 
 Disable module:
 ```
-php -f bin/magento module:disable Zone_AdvancedSortBy
+php bin/magento module:disable Zone_AdvancedSortBy --clear-static-content
 ```
 
 Update system:
 ```
-php -f bin/magento setup:upgrade
-php -f bin/magento cache:flush
-php -f bin/magento cache:clean
+php bin/magento setup:upgrade
+php bin/magento cache:flush
+php bin/magento cache:clean
 ```
