@@ -1,4 +1,9 @@
 # AdvancedSortBy
+Features of Advanced Sort by for Magento 2
+Backend
+* Option to On and Off module
+  * Goto Stores -> Configuration -> Zone -> Advanced Sorting
+Frontend
 Sort By Options:
 * Featured
 * Best Selling
