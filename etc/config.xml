@@ -4,8 +4,14 @@
         <advancedsortby>
             <general>
                 <enable>1</enable>
-                <display_text>Advanced Sort By</display_text>
             </general>
+            <widgetoption>
+                <enable_featured>1</enable_featured>
+                <enable_best_selling>1</enable_best_selling>
+                <enable_alphabetical>1</enable_alphabetical>
+                <enable_price>1</enable_price>
+                <enable_date>1</enable_date>
+            </widgetoption>
         </advancedsortby>
     </default>
 </config>

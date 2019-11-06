@@ -27,4 +27,9 @@ class Data extends AbstractHelper
 
         return $this->getConfigValue(self::XML_PATH_ADVANCEDSORTBY . 'general/' . $code, $storeId);
     }
+    public function getWidgetConfig($code, $storeId = null)
+    {
+
+        return $this->getConfigValue(self::XML_PATH_ADVANCEDSORTBY . 'widgetoption/' . $code, $storeId);
+    }
 }

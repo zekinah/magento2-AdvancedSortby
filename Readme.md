@@ -6,7 +6,9 @@ This module provide new sorting options in product list and grid.
 
 Backend
 * Option to On and Off module
-  * Goto Stores -> Configuration -> Zone -> Advanced Sorting
+  * Goto Stores -> Configuration -> Zone -> Advanced Sorting -> General Configuration
+* Option to On and Off the specific Sort By attribute Options
+  * Goto Stores -> Configuration -> Zone -> Advanced Sorting -> Sortby Options
   
 Frontend
 Sort By Options:

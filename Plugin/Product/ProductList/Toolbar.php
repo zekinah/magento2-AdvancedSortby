@@ -31,7 +31,7 @@ class Toolbar
 
         if ($currentOrder) {
             if ($currentOrder == 'featured') {
-               
+               $subject->getCollection()->setOrder('features_bags', 'asc');
             } elseif ($currentOrder == 'best_selling') {
                 // $subject->getCollection()->sortByBestSellers($this->getCurrentDirectionReverse());
             } elseif ($currentOrder == 'price_asc') {
